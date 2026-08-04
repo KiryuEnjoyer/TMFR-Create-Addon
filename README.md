@@ -1,0 +1,1 @@
+A simple mod which converts the xp of a farmed entity in a mob farm into create nuggets of experience. I made this primarily to have compat between TMFR and the create enchanting industry mod for a modpack me and a friend made.
