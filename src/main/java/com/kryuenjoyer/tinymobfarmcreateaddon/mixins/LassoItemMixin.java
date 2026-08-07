@@ -49,7 +49,7 @@ public class LassoItemMixin {
                 mobData.remove("HurtTime");
                 nbt.put("mobData", mobData);
                 nbt.putString("mobName", target.getName().getString());
-                nbt.putString("mobId", String.valueOf(target.getType()));
+                nbt.putString("mobId", entityId.toString());
                 nbt.putString("mobLootTableLocation", EntityHelper.getLootTableLocation(target));
                 nbt.putDouble("mobHealth", (double)Math.round(target.getHealth() * 10.0F) / (double)10.0F);
                 nbt.putDouble("mobMaxHealth", (double)target.getMaxHealth());
