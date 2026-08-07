@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "tinymobfarmcreateaddon.refmap.json",
   "mixins": [
+    "LassoItemMixin",
     "MobFarmBlockMixin"
   ],
   "client": [
