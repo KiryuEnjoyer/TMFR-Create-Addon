@@ -18,10 +18,16 @@ import java.util.stream.Collectors;
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final List<String> defaultMobs = Arrays.asList("minecraft:ender_dragon", "minecraft:wither", "minecraft:warden");
+    private static final List<String> DEFAULT_MOBS = Arrays.asList("minecraft:ender_dragon", "minecraft:wither", "minecraft:warden");
 
-    public static final ForgeConfigSpec.ConfigValue<List<String>> BLACKLISTED_MOBS = BUILDER.comment("List of blacklisted mob names")
-            .define("Blacklisted Mobs", defaultMobs);
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> BLACKLISTED_MOBS =
+            BUILDER
+                    .comment("List of blacklisted mob names")
+                    .defineList(
+                            "Blacklisted Mobs",
+                            DEFAULT_MOBS,
+                            obj -> obj instanceof String
+                    );
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
